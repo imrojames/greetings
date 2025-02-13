@@ -91,18 +91,24 @@ function createFloatingImage(x, y) {
         const currentX = parseFloat(image.style.left);
         const currentY = parseFloat(image.style.top);
         
-        image.style.left = `${currentX + speedX}px`;
-        image.style.top = `${currentY + speedY}px`;
+        // Slow down the movement
+        image.style.left = `${currentX + speedX * 0.5}px`;
+        image.style.top = `${currentY + speedY * 0.5}px`;
         
-        rotation += rotationSpeed;
+        rotation += rotationSpeed * 0.5;
         image.style.transform = `rotate(${rotation}deg)`;
 
-        // Remove image if it goes off screen
+        // Remove image if it goes off screen, but with a fade out
         const rect = image.getBoundingClientRect();
-        if (rect.top < -200 || rect.left < -200 || 
-            rect.top > window.innerHeight + 200 || 
-            rect.left > window.innerWidth + 200) {
-            image.remove();
+        if (rect.top < -100 || rect.left < -100 || 
+            rect.top > window.innerHeight + 100 || 
+            rect.left > window.innerWidth + 100) {
+            
+            // Fade out gradually
+            image.style.opacity = '0';
+            setTimeout(() => {
+                image.remove();
+            }, 1000); // Wait for fade animation to complete
             return;
         }
 
