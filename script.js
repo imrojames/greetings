@@ -4,7 +4,7 @@ const resetBtn = document.getElementById('resetBtn');
 const popSound = document.getElementById('popSound');
 
 const messages = [
-    "Happy Valentine's Day! annging I hope this put's you a smile in your face 😊. I know this is simple but this comes from the heart. I LOVE YOU❤️😘"
+    "Happy Valentine's Day annging! I hope this puts a smile on your face 😊. I know this is simple, but it comes from the heart. I love you ❤️😘"
 ];
 
 const valentineImages = [
