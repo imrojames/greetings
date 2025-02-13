@@ -1,0 +1,16 @@
+{
+  "name": "valentine-page",
+  "version": "1.0.0",
+  "homepage": "https://imrojames.github.io/greetings",
+  "description": "Valentine's Day Interactive Page",
+  "scripts": {
+    "start": "lite-server",
+    "deploy": "gh-pages -d ."
+  },
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  },
+  "dependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
